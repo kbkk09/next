@@ -4,10 +4,12 @@ import { NextRequest, NextResponse } from "next/server"
 
 export const GET = async(request: NextRequest, context:GetServerSidePropsContext) =>{
     const params = await context.params
+    console.log(params)
     try{
         await connectDB()
         return NextResponse.json({message: "アイテム読み取り成功（シングル）"})
     }catch(err){
+        console.error(err)
         return NextResponse.json({message: "アイテム読み取り失敗（シングル）"})
     }
 }

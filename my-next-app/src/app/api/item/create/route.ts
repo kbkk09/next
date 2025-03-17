@@ -11,6 +11,7 @@ export const POST = async(request: NextRequest) =>{
     
         return NextResponse.json({message: "アイテム作成"})    
     }catch(err){
+        console.error(err)
         return NextResponse.json({message: "アイテム作成失敗"})
     }
 }
